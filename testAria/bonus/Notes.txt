@@ -1,0 +1,35 @@
+if i wanna push and commit new modifs to gitea what should i do                                                                  
+                                                                      
+⏺ You have two options:                                                                                                                
+                                                                                                                                     
+  Option A — via Gitea web UI (easiest for the defense demo):                                                                          
+  1. Open http://gitea.localhost:3000
+  2. Login: gitea / gitea123                                                                                                           
+  3. Go to testArgo repo → confs/dev/deployment.yml         
+  4. Click the pencil icon to edit                                                                                                     
+  5. Change v1 → v2, commit directly in the UI                                                                                         
+                                                                                                                                       
+  ---                                                                                                                                  
+  Option B — via git CLI:                                   
+                                                                                                                                       
+  # clone from local Gitea                                  
+  git clone http://gitea:gitea123@gitea.localhost:3000/gitea/testArgo.git                                                              
+  cd testArgo
+                                                                                                                                       
+  # make your changes                                       
+  sed -i '' 's/testapp:v1/testapp:v2/' confs/dev/deployment.yml
+                                                                                                                                       
+  # push
+  git add confs/dev/deployment.yml                                                                                                     
+  git commit -m "upgrade to v2"                             
+  git push
+
+  ---                                                                                                                                  
+  After pushing either way, ArgoCD will detect the change within 5 minutes. To force an immediate sync:
+                                                                                                                                       
+  ! argocd login argocd.localhost:9090 --username admin --password sNricV2GRtba-cuu --insecure
+  ! argocd app sync myapp                                                                                                              
+                                                            
+  Then verify:                                                                                                                         
+  ! curl http://localhost:8080                              
+  # {"status":"ok", "message": "v2"}  

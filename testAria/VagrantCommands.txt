@@ -1,0 +1,77 @@
+=> vagrant up 
+    (start the VM)
+
+=> vagrant status
+    (check the status of the VM)
+
+=> vagrant ssh 
+    (connect to the VM via SSH)
+
+=> vagrant halt
+    (stop the VM)
+
+=> vagrant reload
+    (restart the VM and apply any changes to the Vagrantfile)
+
+=> vagrant destroy
+    (remove the VM and all associated resources)
+
+=> vagrant provision
+    (run the provisioning scripts defined in the Vagrantfile)
+
+=> vagrant box add <box-name> <box-url>
+    (add a new box to Vagrant)
+
+=> vagrant box list
+    (list all available boxes)
+
+=> vagrant box remove <box-name>
+    (remove a box from Vagrant)
+
+=> vagrant ssh-config
+    (display the SSH configuration for the VM)
+
+=> vagrant global-status
+    (list all Vagrant environments on the system)
+
+=> vagrant snapshot save <snapshot-name>
+    (save the current state of the VM as a snapshot)
+
+=> vagrant snapshot list
+    (list all snapshots for the VM)
+
+=> vagrant snapshot restore <snapshot-name>
+    (restore the VM to a previous snapshot)
+
+=> vagrant snapshot delete <snapshot-name>
+    (delete a snapshot)
+
+=> vagrant box update
+    (update all installed boxes to the latest version)
+
+=> vagrant box outdated
+    (check for outdated boxes)
+
+=> vagrant box version <box-name>
+    (check the version of a specific box)
+
+=> vagrant box outdated <box-name>
+    (check if a specific box is outdated)
+
+=> vagrant box update <box-name>
+    (update a specific box to the latest version)
+
+=> vagrant box repackage <box-name>
+    (repackage a box to create a new version)
+
+=> vagrant box export <box-name> <output-file>
+    (export a box to a file)
+
+=> vagrant plugin install <plugin-name>
+    (install a Vagrant plugin)
+
+=> vagrant plugin list
+    (list all installed Vagrant plugins)
+
+=> vagrant plugin uninstall <plugin-name>
+    (uninstall a Vagrant plugin)

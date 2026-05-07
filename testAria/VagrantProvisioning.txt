@@ -1,0 +1,26 @@
+=>Inline script:
+    config.vm.provision "shell", inline: <<-SHELL
+        sudo apt update
+        sudo apt install -y nginx
+    SHELL
+
+=>External script:
+  config.vm.provision "shell", path: "script.sh"
+
+=>File Provisioning:
+    config.vm.provision "file", source: "app.conf", destination: "/home/vagrant/app.conf"
+
+=>Ansible Provisioning:
+    config.vm.provision "ansible" do |ansible|
+        ansible.playbook = "playbook.yml"
+    end
+
+=>Chef Provisioning:
+    config.vm.provision "chef_solo" do |chef|
+        chef.add_recipe "my_cookbook::default"
+    end
+
+=> Docker Provisioning:
+    config.vm.provision "docker" do |d|
+        d.run "nginx"
+    end

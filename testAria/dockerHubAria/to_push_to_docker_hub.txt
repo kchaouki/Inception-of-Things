@@ -1,0 +1,30 @@
+=> docker login
+    Username: <your_docker_hub_username>
+    Password: <your_docker_hub_password>
+
+=> docker login -u <your_docker_hub_username> -p <your_docker_hub_password>
+
+=> docker tag <your_image_name>:<tag> <your_docker_hub_username>/<your_image_name>:<tag>
+    (tags the local image with the Docker Hub repository name)
+
+=> docker tag my-app:latest myusername/my-app:latest
+
+=> docker push <your_docker_hub_username>/<your_image_name>:<tag>
+    (pushes the tagged image to Docker Hub)
+
+=> docker push myusername/my-app:latest
+    (pushes the my-app image with the latest tag to Docker Hub under the myusername account)
+
+==> docker pull <your_docker_hub_username>/<your_image_name>:<tag>
+    (pulls the image from Docker Hub to your local machine)
+
+=> docker pull myusername/my-app:latest
+    (pulls the my-app image with the latest tag from Docker Hub to your local machine)
+
+=> docker images
+    (lists all local Docker images)
+
+
+docker build -t kchaouki/app1:1.0 ./app1
+docker tag kchaouki/app1:1.0 kchaouki/app1:1.0
+docker push kchaouki/app1:1.0

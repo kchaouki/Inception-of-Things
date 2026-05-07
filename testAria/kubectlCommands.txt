@@ -1,0 +1,81 @@
+=> kubectl get nodes
+    (gets the list of nodes in the cluster)
+
+=> kubectl get nodes -o wide
+    (gets the list of nodes in the cluster with additional details)
+
+=> kubectl get nodes -o yaml
+    (gets the list of nodes in the cluster in YAML format)
+
+=> kubectl --version
+    (gets the version of kubectl)
+
+=> kubectl version
+    (gets the version of kubectl and the Kubernetes cluster)
+
+=> kubectl get pods
+    (gets the list of pods in the default namespace)
+
+=> kubectl get pods -n kube-system
+    (gets the list of pods in the kube-system namespace)
+
+=> kubectl get pods -o wide
+    (gets the list of pods with additional details)
+
+=> kubectl create -f my-pod.yml
+    (creates a pod from the my-pod.yml file)
+
+=> kubectl apply -f my-pod.yml
+    (applies the configuration in the my-pod.yml file, creating or updating the pod)
+
+=> kubectl delete -f my-pod.yml
+    (deletes the pod defined in the my-pod.yml file)
+
+=> kubectl get replicaset
+    (gets the list of ReplicaSets in the default namespace)
+
+=> kubectl get replicaset -o wide
+    (gets the list of ReplicaSets with additional details)
+
+=> kubectl create -f my-replicaset.yml
+    (creates a ReplicaSet from the my-replicaset.yml file)
+
+=> kubectl apply -f my-replicaset.yml
+    (applies the configuration in the my-replicaset.yml file, creating or updating the ReplicaSet)
+
+=> kubectl delete -f my-replicaset.yml
+    (deletes the ReplicaSet defined in the my-replicaset.yml file)
+
+=> kubectl get replicaset myapp-replicaset
+    (gets the details of the ReplicaSet named myapp-replicaset)
+
+=> kubectl scale replicaset myapp-replicaset --replicas=5
+    (scales the myapp-replicaset to 5 replicas)
+
+=> kubectl get deployments
+    (gets the list of Deployments in the default namespace)
+
+=> kubectl get deployments -o wide
+    (gets the list of Deployments with additional details)
+
+=> kubectl create -f my-deployment.yml
+    (creates a Deployment from the my-deployment.yml file)
+
+=> kubectl apply -f my-deployment.yml
+    (applies the configuration in the my-deployment.yml file, creating or updating the Deployment)
+
+=> kubectl delete -f my-deployment.yml
+    (deletes the Deployment defined in the my-deployment.yml file)
+
+=> kubectl get all
+    (gets all resources in the default namespace)
+
+=> kubectl set image deployment/my-deployment my-container=my-image:latest
+    (updates the image of the container in the my-deployment Deployment to my-image:latest)
+
+=> kubectl delete all --all
+
+=> kubectl run curltest --rm -it --image=curlimages/curl -- sh
+    (go inside the cluster)
+
+=> curl -H "Host: app1.com" http://57.129.77.121
